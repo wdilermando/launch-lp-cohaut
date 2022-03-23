@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .input-lp {
+    @apply w-full appearance-none rounded-md px-4 py-2 text-gray-200 outline-none;
+  }
+
+  .input-lp:hover {
+    @apply cursor-text;
+  }
+
+  .input-lp:focus {
+    @apply border border-gray-800 bg-black;
+  }
+
+  .btn {
+    @apply rounded-md bg-black py-2 font-semibold text-white hover:bg-lpSecondary;
+  }
+}
+
+.react-datetime-picker__wrapper {
+  border: none !important;
+}
+.react-datetime-picker__inputGroup {
+  padding: 0 32px !important;
+}

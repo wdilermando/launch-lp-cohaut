@@ -6,13 +6,22 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^6.2.8",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-datetime-picker": "^3.5.0",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.28.1",
+    "react-icons": "^4.3.1",
+    "react-intersection-observer": "^8.33.1",
+    "react-lottie-player": "^1.4.1",
+    "remove": "^0.1.5",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
+    "@types/react-lottie": "^1.2.6",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",

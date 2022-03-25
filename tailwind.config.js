@@ -8,6 +8,11 @@ module.exports = {
       colors: {
         lpPrimary: '#121212',
         lpSecondary: '#ff7149',
+        lpSecondary2: '#d55539',
+      },
+      fontFamily: {
+        simplon: ['Simplon', 'sans-serif'],
+        simplonBold: ['Simplon Bold', 'sans-serif'],
       },
     },
   },

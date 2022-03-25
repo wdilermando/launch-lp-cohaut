@@ -26,3 +26,41 @@
 .react-datetime-picker__inputGroup {
   padding: 0 32px !important;
 }
+
+.swiper-button-next::after {
+  background-image: url('../../public/images/right-arrow.svg') !important;
+
+  background-repeat: no-repeat;
+  content: '' !important;
+  width: 60px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-button-prev::after {
+  background-image: url('../../public/images/left-arrow.svg') !important;
+
+  background-repeat: no-repeat;
+  content: '' !important;
+  width: 60px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+@font-face {
+  font-family: 'Simplon';
+  src: url('../../public/fonts/simplonbpregular-webfont.woff2');
+}
+
+@font-face {
+  font-family: 'Simplon Bold';
+  src: url('../../public/fonts/simplonbp-bold-webfont.woff2');
+}

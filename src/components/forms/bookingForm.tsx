@@ -9,7 +9,7 @@ import {
   MdEditCalendar,
 } from 'react-icons/md'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import InputForm from './inputForm'
+import InputForm from '../molecules/inputForm'
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle'
 import 'react-calendar/dist/Calendar.css'
 import 'react-clock/dist/Clock.css'
@@ -27,11 +27,10 @@ const BookingForm: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValidating },
+    formState: { errors },
   } = useForm<IFormValues>()
   const [value, onChange] = useState(new Date())
   const onSubmit: SubmitHandler<IFormValues> = (data, e) => {
-    console.log('====================================', errors)
     console.log({
       ...data,
       bookingDate: `${value.toLocaleDateString(
@@ -41,7 +40,7 @@ const BookingForm: React.FC = () => {
         minute: '2-digit',
       })}`,
     })
-    console.log('====================================')
+
     e?.target.reset()
   }
 
@@ -50,7 +49,6 @@ const BookingForm: React.FC = () => {
       className="flex-col space-y-3 text-white"
       onSubmit={handleSubmit(onSubmit)}
     >
-      {JSON.stringify(isValidating)}
       <InputForm
         label="name"
         type="text"

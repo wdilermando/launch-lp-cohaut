@@ -3,8 +3,8 @@ import BookingForm from '../forms/bookingForm'
 
 const BookingSection: React.FC = () => {
   return (
-    <section className={`relative flex min-h-screen items-center bg-lpPrimary`}>
-      <div className="z-10 grid gap-10 px-5 lg:w-10/12 lg:grid-cols-2 lg:px-32">
+    <section className={`relative flex min-h-screen  items-center bg-lpPrimary`}>
+      <div className="z-10 grid gap-10 px-5 py-16 lg:w-10/12 lg:grid-cols-2 lg:px-32">
         <div className="flex-col items-center justify-center">
           <h1 className="mb-10 text-4xl font-bold text-lpSecondary">
             VIVA ESSA EXPERIÊNCIA
@@ -29,8 +29,8 @@ const BookingSection: React.FC = () => {
       {/* <div className="absolute left-20 z-0 hidden lg:flex">
     <img src={'images/hero-people.jpg'} alt="people" />
   </div> */}
-      <div className="absolute right-0 z-0 hidden lg:flex">
-        <img src={'images/hero-people.jpg'} alt="people" />
+      <div className="absolute right-0 z-0 hidden lg:flex w-1/5 ">
+        <img src={'images/hero-people.jpg'}  alt="people"  />
       </div>
     </section>
   )

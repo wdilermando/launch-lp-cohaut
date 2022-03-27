@@ -68,7 +68,7 @@ const AgendaSection: React.FC = () => {
   ]
 
   return (
-    <section className={`flex min-h-screen items-center bg-lpPrimary`}>
+    <section className={`flex min-h-screen items-center py-16 lg:py-0 bg-lpPrimary`}>
       <div className="w-full flex-col space-y-10 py-16 px-5 lg:px-32">
         <div className="flex justify-between">
           <h3 className="text-2xl  text-lpSecondary shadow-sm">PROGRAMAÇÃO</h3>

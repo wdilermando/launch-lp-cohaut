@@ -16,7 +16,7 @@ const ListingsSlidesModal: React.FC<Props> = ({
   selectedListing,
 }) => {
   return (
-    <section className="absolute z-50 w-screen bg-black bg-opacity-95 lg:h-screen">
+    <section className="absolute z-50 w-screen bg-black bg-opacity-95 lg:h-auto">
       <div className="flex-col justify-between py-16 px-5 lg:flex lg:h-screen lg:px-32">
         <div className="flex items-center justify-between text-lpSecondary">
           <h3 className="text-2xl  font-bold shadow-sm">LINHA CO-HAUT</h3>
@@ -24,7 +24,7 @@ const ListingsSlidesModal: React.FC<Props> = ({
             <h3 className="text-2xl">VOLTAR</h3>
           </a>
         </div>
-        <div className=" w-full text-lpSecondary md:px-32">
+        <div className="w-full text-lpSecondary md:px-8">
           {/* item card */}
           <Swiper
             spaceBetween={20}

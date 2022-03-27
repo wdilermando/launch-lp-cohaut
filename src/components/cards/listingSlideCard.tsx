@@ -7,13 +7,13 @@ type Props = {
 const ListingSlideCard: React.FC<Props> = ({ slideActive }) => {
   return (
     <div
-      className={`flex-col items-center ${
+      className={`flex-col items-start ${
         !slideActive && 'opacity-50'
       } mx-auto my-0 w-64 lg:flex lg:w-11/12 lg:flex-row lg:space-x-4`}
     >
       <div className="my-8 flex w-full flex-col items-start justify-between space-y-4 lg:my-0 lg:w-3/12">
-        <h2 className="text-6xl font-bold">004.</h2>
-        <p className="text-justify text-base">
+        <h2 className="text-4xl md:text-6xl font-bold">004.</h2>
+        <p className="text-justify text-xs md:text-sm">
           Nam porttitor nunc eu maximus tempus. Nulla ultricies euismod enim,
           eget aliquet arcu posuere id. Donec eget ante eget nisi eleifend
           commodo. Aenean finibus semper metus. Nam facilisis sollicitudin dui
@@ -23,7 +23,7 @@ const ListingSlideCard: React.FC<Props> = ({ slideActive }) => {
           nulla et efficitur.
         </p>
 
-        <div className="w-full flex-col">
+        <div className="w-full flex-col text-xs">
           <small className="text-gray-600">RECIFE - POCO DA PANELA</small>
           <span className="flex items-center justify-between ">
             <h4 className="text-gray-300">Rua Chacon, 297</h4>

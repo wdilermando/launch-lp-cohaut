@@ -9,9 +9,9 @@ import 'swiper/css/navigation'
 const ArchitectsSection: React.FC = () => {
   return (
     <section className={`flex min-h-screen items-center bg-lpPrimary`}>
-      <div className="w-full flex-col space-y-10 px-5 lg:px-32">
-        <h3 className="text-2xl  text-lpSecondary shadow-sm">ARQUITETOS</h3>
-        <div className="w-full md:px-32">
+      <div className="w-full flex-col space-y-10 py-16 lg:py-0 px-5 lg:px-32">
+        <h3 className="text-2xl text-lpSecondary shadow-sm">ARQUITETOS</h3>
+        <div className="w-full md:px-8">
           <Swiper
             modules={[Navigation]}
             breakpoints={{
@@ -20,7 +20,7 @@ const ArchitectsSection: React.FC = () => {
                 spaceBetween: 10,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 15,
               },
               1024: {

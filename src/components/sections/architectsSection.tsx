@@ -1,53 +1,66 @@
 import React from 'react'
-import { Navigation } from 'swiper'
+import { Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import ArchitectCard from '../cards/architectCard'
-import Arrows from '../molecules/arrows'
 import 'swiper/css'
-import 'swiper/css/navigation'
+import 'swiper/css/scrollbar'
+import ArchitectCardImage from '../cards/architectCardImage'
 
 const ArchitectsSection: React.FC = () => {
+  const architects = [
+    {
+      id: 1,
+      imgSrc: 'photo1.jpg',
+      name: 'Andre Caricio',
+      listingId: '001',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis, velit ac lacinia malesuada, felis augue ultrices urna, vel tincidunt lacus dolor id augue. Sed varius diam facilisis tincidunt euismod. Maecenas sagittis sed mi eu pellentesque.',
+    },
+    {
+      id: 2,
+      imgSrc: 'photo2.jpg',
+      name: 'Isis Figueiroa',
+      listingId: '002',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis, velit ac lacinia malesuada, felis augue ultrices urna, vel tincidunt lacus dolor id augue. Sed varius diam facilisis tincidunt euismod. Maecenas sagittis sed mi eu pellentesque.',
+    },
+    {
+      id: 3,
+      imgSrc: 'photo3.jpg',
+      name: 'Camila Bittencourt',
+      listingId: '003',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis, velit ac lacinia malesuada, felis augue ultrices urna, vel tincidunt lacus dolor id augue. Sed varius diam facilisis tincidunt euismod. Maecenas sagittis sed mi eu pellentesque.',
+    },
+    {
+      id: 4,
+      imgSrc: 'photo4.jpg',
+      name: 'Filipo Madeira',
+      listingId: '004',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis, velit ac lacinia malesuada, felis augue ultrices urna, vel tincidunt lacus dolor id augue. Sed varius diam facilisis tincidunt euismod. Maecenas sagittis sed mi eu pellentesque.',
+    },
+  ]
   return (
-    <section className={`flex min-h-screen items-center bg-lpPrimary`}>
-      <div className="w-full flex-col space-y-10 py-16 lg:py-0 px-5 lg:px-32">
-        <h3 className="text-2xl text-lpSecondary shadow-sm">ARQUITETOS</h3>
-        <div className="w-full md:px-8">
-          <Swiper
-            modules={[Navigation]}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 5,
-              },
-            }}
-            navigation
-          >
-            <SwiperSlide>
-              <ArchitectCard />
+    <section className={`min-h-screen items-center bg-lpPrimary`}>
+      <div className="hidden lg:flex">
+        {architects.map((architect) => (
+          <ArchitectCardImage {...architect} key={architect.id} />
+        ))}
+      </div>
+      <div className="flex lg:hidden">
+        <Swiper
+          scrollbar={{
+            hide: false,
+          }}
+          modules={[Scrollbar]}
+          slidesPerView={1}
+        >
+          {architects.map((architect) => (
+            <SwiperSlide key={architect.id}>
+              <ArchitectCardImage {...architect} />
             </SwiperSlide>
-            <SwiperSlide>
-              <ArchitectCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ArchitectCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ArchitectCard />
-            </SwiperSlide>
-          </Swiper>
-        </div>
-        <div className="flex justify-between">
-          <Arrows />
-          <img src="images/cohaut-logo-horizontal.svg" />
-        </div>
+          ))}
+        </Swiper>
       </div>
     </section>
   )

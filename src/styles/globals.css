@@ -55,6 +55,10 @@
   opacity: 0 !important;
 }
 
+.fix-hover-card {
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
 @font-face {
   font-family: 'Simplon';
   src: url('../../public/fonts/simplonbpregular-webfont.woff2');

@@ -68,8 +68,10 @@ const AgendaSection: React.FC = () => {
   ]
 
   return (
-    <section className={`flex min-h-screen items-center py-16 lg:py-0 bg-lpPrimary`}>
-      <div className="w-full flex-col space-y-10 py-16 px-5 lg:px-32">
+    <section
+      className={`flex min-h-screen items-center bg-lpPrimary py-16 lg:py-0`}
+    >
+      <div className="w-full flex-col space-y-10 px-5 lg:px-32">
         <div className="flex justify-between">
           <h3 className="text-2xl  text-lpSecondary shadow-sm">PROGRAMAÇÃO</h3>
           <img src="images/dots.jpg" />
@@ -77,7 +79,7 @@ const AgendaSection: React.FC = () => {
         {/* Exibe em telas menores */}
         <div className="lg:hidden">
           {[0, 1, 2, 3, 5].map((event) => (
-            <div>
+            <div key={event}>
               <div className="w-full p-3  text-lpSecondary lg:w-64">
                 <h4 className="text-2xl font-bold italic">22</h4>
                 <p className="text-sm">Marco</p>
@@ -85,7 +87,10 @@ const AgendaSection: React.FC = () => {
               <div className="w-full justify-start rounded-md bg-lpSecondary lg:flex">
                 <div className="w-full flex-col items-center  rounded-md  text-white even:bg-lpSecondary2 lg:w-64">
                   {[0, 1, 2, 3, 4].map((eventDetail) => (
-                    <div className="w-full flex-col items-start border-b border-slate-800 p-3  last:border-none">
+                    <div
+                      key={eventDetail}
+                      className="w-full flex-col items-start border-b border-slate-800 p-3  last:border-none"
+                    >
                       <p>
                         <strong>9h</strong> Evento XPTO
                       </p>
@@ -101,7 +106,10 @@ const AgendaSection: React.FC = () => {
         <div className="hidden flex-col lg:flex">
           <div className="w-full lg:flex">
             {[0, 1, 2, 3, 5].map((event) => (
-              <div className="w-full p-3  text-lpSecondary lg:w-full">
+              <div
+                key={event}
+                className="w-full p-3  text-lpSecondary lg:w-full"
+              >
                 <h4 className="text-2xl font-bold italic">22</h4>
                 <p className="text-sm">Marco</p>
               </div>
@@ -109,9 +117,15 @@ const AgendaSection: React.FC = () => {
           </div>
           <div className="w-full justify-start rounded-md bg-lpSecondary lg:flex">
             {[0, 1, 2, 3, 5].map((event) => (
-              <div className="w-full flex-col items-center rounded-md  text-white even:bg-lpSecondary2 lg:w-full">
+              <div
+                key={event}
+                className="w-full flex-col items-center rounded-md  text-white even:bg-lpSecondary2 lg:w-full"
+              >
                 {[0, 1, 2, 3, 4].map((eventDetail) => (
-                  <div className="w-full flex-col items-start border-b border-slate-800 p-3  last:border-none">
+                  <div
+                    key={eventDetail}
+                    className="w-full flex-col items-start border-b border-slate-800 p-3  last:border-none"
+                  >
                     <p>
                       <strong>9h</strong> Evento XPTO
                     </p>

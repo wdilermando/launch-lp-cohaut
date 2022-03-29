@@ -5,12 +5,12 @@ const AdvertisingSection: React.FC = () => {
 
   return (
     <section className={`relative flex min-h-screen  bg-lpSecondary`}>
-      <div className="z-10 space-x-4 space-y-4 py-16 px-5 lg:flex lg:px-32">
-        <div className="flex flex-col items-center justify-between pl-3 lg:w-2/12 lg:items-start lg:border-r  lg:border-slate-800">
+      <div className="z-10 items-end space-y-4 space-x-4 py-16 px-5 lg:flex lg:px-32">
+        <div className="flex flex-col items-center justify-between py-5  lg:h-full lg:w-2/12 lg:items-start lg:border-r  lg:border-slate-800">
           <img src={'images/studio.jpg'} alt="studio" />
           <img src="images/cohaut-logo-horizontal-black.svg" />
         </div>
-        <div className="flex flex-col items-end justify-end lg:w-5/12">
+        <div className="flex flex-col justify-end lg:h-full lg:w-5/12">
           <p className="text-base text-slate-800">
             Nam porttitor nunc eu maximus tempus. Nulla ultricies euismod enim,
             eget aliquet arcu posuere id. Donec eget ante eget nisi eleifend
@@ -25,19 +25,21 @@ const AdvertisingSection: React.FC = () => {
             turpis faucibus interdum.
           </p>
         </div>
-        <div className="flex-col items-center justify-center lg:w-5/12">
-          <div className=" hidden gap-4 lg:grid lg:grid-cols-2">
+        <div className="flex-col items-end justify-end  lg:w-4/12">
+          <div className="hidden gap-4 lg:grid lg:grid-cols-2">
             {postsToShow.map((post) => (
               <img
+                key={post}
                 src="images/mu-1.jpg"
                 className="h-44 w-full rounded-md object-cover shadow-md"
               />
             ))}
           </div>
           <div className="lg:hidden">
-            <div className="grid gap-4 lg:grid-cols-2">
+            <div className="grid items-end gap-4 lg:grid-cols-2">
               {postsToShow.slice(3).map((post) => (
                 <img
+                  key={post}
                   src="images/mu-1.jpg"
                   className="h-44 w-full rounded-md object-cover shadow-md"
                 />

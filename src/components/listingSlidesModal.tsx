@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Arrows from './molecules/arrows'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -15,6 +15,11 @@ const ListingsSlidesModal: React.FC<Props> = ({
   exitModal,
   selectedListing,
 }) => {
+  const mySlider = useRef(null)
+  useEffect(() => {
+    mySlider.current.swiper.slideTo(selectedListing)
+  }, [])
+
   return (
     <section className="absolute z-50 w-screen bg-black bg-opacity-95 lg:h-auto">
       <div className="flex-col justify-between py-16 px-5 lg:flex lg:h-screen lg:px-32">
@@ -33,10 +38,13 @@ const ListingsSlidesModal: React.FC<Props> = ({
             navigation
             centeredSlides={true}
             watchOverflow
+            ref={mySlider}
           >
             {[1, 2, 3, 4, 5].map((listing, index) => (
               <SwiperSlide key={index}>
-                {({ isActive }) => <ListingSlideCard slideActive={isActive} />}
+                {({ isActive }) => (
+                  <ListingSlideCard listingId={index} slideActive={isActive} />
+                )}
               </SwiperSlide>
             ))}
           </Swiper>

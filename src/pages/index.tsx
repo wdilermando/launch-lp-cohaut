@@ -8,6 +8,8 @@ import AgendaSection from '../components/sections/agendaSection'
 import AdvertisingSection from '../components/sections/advertisingSection'
 import ListingsSlidesModal from '../components/listingSlidesModal'
 import { useState } from 'react'
+import EbookSection from '../components/sections/ebookSection'
+import NewsLetterSection from '../components/sections/newsLetterSection'
 
 const Home: NextPage = () => {
   const [showListingsSlides, setShowListingsSlides] = useState(false)
@@ -31,6 +33,8 @@ const Home: NextPage = () => {
         <ArchitectsSection />
         <AgendaSection />
         <AdvertisingSection />
+        <EbookSection />
+        <NewsLetterSection />
         <Footer />
       </div>
     </>

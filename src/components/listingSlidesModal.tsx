@@ -1,23 +1,34 @@
-import React, { useEffect, useRef } from 'react'
+import React, { RefAttributes, useEffect, useRef } from 'react'
 import Arrows from './molecules/arrows'
-import { Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Navigation } from 'swiper'
+import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 import ListingSlideCard from './cards/listingSlideCard'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { IListing } from '../interfaces/IListing'
 
 type Props = {
   exitModal?: any
   selectedListing?: number
+  listings?: IListing[]
 }
 
 const ListingsSlidesModal: React.FC<Props> = ({
   exitModal,
   selectedListing,
+  listings,
 }) => {
+  console.log(selectedListing)
+
+  const RefSwiper: React.FunctionComponent<
+    SwiperProps & RefAttributes<SwiperCore>
+  > = Swiper
   const mySlider = useRef(null)
   useEffect(() => {
-    mySlider.current.swiper.slideTo(selectedListing)
+    const parseSelectedListing =
+      Number(selectedListing.toString().replace('0', '')) - 1
+    console.log(parseSelectedListing)
+    mySlider.current.swiper.slideTo(parseSelectedListing)
   }, [])
 
   return (
@@ -31,23 +42,23 @@ const ListingsSlidesModal: React.FC<Props> = ({
         </div>
         <div className="w-full text-lpSecondary md:px-8">
           {/* item card */}
-          <Swiper
+          <RefSwiper
             spaceBetween={20}
             slidesPerView={1.1}
             modules={[Navigation]}
             navigation
+            ref={mySlider}
             centeredSlides={true}
             watchOverflow
-            ref={mySlider}
           >
-            {[1, 2, 3, 4, 5].map((listing, index) => (
-              <SwiperSlide key={index}>
+            {listings.map((listing, index) => (
+              <SwiperSlide key={listing.id}>
                 {({ isActive }) => (
-                  <ListingSlideCard listingId={index} slideActive={isActive} />
+                  <ListingSlideCard listing={listing} slideActive={isActive} />
                 )}
               </SwiperSlide>
             ))}
-          </Swiper>
+          </RefSwiper>
         </div>
         <div className="mt-10 flex justify-between">
           <Arrows />

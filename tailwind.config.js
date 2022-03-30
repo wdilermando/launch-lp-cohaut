@@ -7,14 +7,16 @@ module.exports = {
     extend: {
       colors: {
         lpPrimary: '#121212',
-        lpSecondary: '#ff7149',
+        lpSecondary: '#FF704C',
         lpSecondary2: '#d55539',
       },
       fontFamily: {
-        simplon: ['Simplon', 'sans-serif'],
-        simplonBold: ['Simplon Bold', 'sans-serif'],
+        montserrat: ['Montserrat'],
       },
     },
   },
-  plugins: [require('tailwind-scrollbar-hide')],
+  plugins: [
+    require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/line-clamp'),
+  ],
 }

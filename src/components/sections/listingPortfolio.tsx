@@ -1,55 +1,28 @@
 import React from 'react'
+import { IListing } from '../../interfaces/IListing'
 import ListingCard from '../cards/listingCard'
 
 type Props = {
   handleModal?: any
+  listings?: IListing[]
 }
 
-const ListingPortfolio: React.FC<Props> = ({ handleModal }) => {
-  const listings = [
-    {
-      listingId: '001.',
-      imgSource:
-        'https://cohaut.com/wp-content/themes/cohaut/assets/images/inicio-carrossel/1.jpg',
-      description: 'O antigo e o novo em completa sintonia',
-      id: 1,
-    },
-    {
-      listingId: '002.',
-      imgSource:
-        'https://cohaut.com/wp-content/themes/cohaut/assets/images/inicio-carrossel/1.jpg',
-      description: 'O antigo e o novo em completa sintonia',
-      id: 2,
-    },
-    {
-      listingId: '003.',
-      imgSource:
-        'https://cohaut.com/wp-content/themes/cohaut/assets/images/inicio-carrossel/1.jpg',
-      description: 'O antigo e o novo em completa sintonia',
-      id: 3,
-    },
-    {
-      listingId: '004.',
-      imgSource:
-        'https://cohaut.com/wp-content/themes/cohaut/assets/images/inicio-carrossel/1.jpg',
-      description: 'O antigo e o novo em completa sintonia',
-      id: 4,
-    },
-  ]
-
+const ListingPortfolio: React.FC<Props> = ({ handleModal, listings }) => {
   return (
-    <section className={`flex min-h-screen items-center bg-lpPrimary`}>
-      <div className="grid items-center gap-10 px-5 lg:grid-cols-2 lg:px-32">
-        <div className="items-center justify-center">
-          <img src="images/decorados.jpg" />
+    <section className={`flex min-h-screen items-center bg-lpPrimary py-16`}>
+      <div className="flex-col items-center space-y-6 px-5 lg:flex lg:flex-row lg:space-x-6 lg:px-32">
+        <div className="items-center justify-center lg:w-6/12">
+          <img src="images/decorados.jpg" className="w-full" />
         </div>
-        <div className="items-center justify-center">
+        <div className="items-center justify-center lg:w-6/12">
           <div className="grid gap-5 lg:grid-cols-2">
             {listings.map((listing) => (
               <ListingCard
                 key={listing.id}
-                {...listing}
-                goToListing={() => handleModal(true, listing.id)}
+                listing={listing}
+                goToListing={() =>
+                  handleModal(true, listing.attributes.listingId)
+                }
               />
             ))}
           </div>

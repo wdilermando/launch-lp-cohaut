@@ -11,18 +11,13 @@ const AdvertisingSection: React.FC = () => {
           <img src="images/cohaut-logo-horizontal-black.svg" />
         </div>
         <div className="flex flex-col justify-end lg:h-full lg:w-5/12">
-          <p className="text-base text-slate-800">
-            Nam porttitor nunc eu maximus tempus. Nulla ultricies euismod enim,
-            eget aliquet arcu posuere id. Donec eget ante eget nisi eleifend
-            commodo. Aenean finibus semper metus. Nam facilisis sollicitudin dui
-            sit amet convallis. Integer at metus nec magna fringilla convallis.
-            Aliquam erat volutpat. Integer dignissim tincidunt purus ut aliquam.
-            Duis et viverra nibh, non pellentesque ipsum. Donec elementum
-            accumsan nulla et efficitur. Suspendisse tellus est, viverra nec
-            luctus sed, euismod eu erat. Nunc in feugiat ligula. Nam tincidunt
-            augue sed ligula maximus, eget ultricies ex ornare. Nulla orci ante,
-            lobortis sed posuere in, finibus vitae leo. Donec sed massa quis
-            turpis faucibus interdum.
+          <p className="text-base font-semibold text-slate-800">
+            Para nos acompanhar no LANÇAMENTO CO-HAUT, contamos com o Studio Mu,
+            o café-bistrô idealizado pelo chef Matheus Uchôa, que promete tornar
+            a experiência gastronômica do evento inovadora. Com pratos cheios de
+            capricho e únicos em cada detalhe, a Cozinha Experimental vem para
+            mostrar que a gastronomia e a arte andam juntas, deixando o ambiente
+            mais belo e, é claro, mais saboroso.
           </p>
         </div>
         <div className="flex-col items-end justify-end  lg:w-4/12">

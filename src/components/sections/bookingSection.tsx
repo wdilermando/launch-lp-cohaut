@@ -3,22 +3,34 @@ import BookingForm from '../forms/bookingForm'
 
 const BookingSection: React.FC = () => {
   return (
-    <section className={`relative flex min-h-screen  items-center bg-lpPrimary`}>
+    <section
+      className={`relative flex min-h-screen  items-center bg-lpPrimary`}
+    >
       <div className="z-10 grid gap-10 px-5 py-16 lg:w-10/12 lg:grid-cols-2 lg:px-32">
-        <div className="flex-col items-center justify-center">
-          <h1 className="mb-10 text-4xl font-bold text-lpSecondary">
-            VIVA ESSA EXPERIÊNCIA
+        <div className="flex-col items-center justify-center space-y-4">
+          <h1 className="text-4xl font-bold leading-normal text-lpSecondary">
+            VIVA ESSA <br /> EXPERIÊNCIA
           </h1>
-          <p className="text-justify text-lpSecondary">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          <h3 className="mb-16 text-lg italic text-gray-300">
+            Conheça uma nova forma de morar, conectados à comunidade do futuro.
+          </h3>
+
+          <p className="text-justify leading-8 tracking-wide text-lpSecondary">
+            Entre os dias{' '}
+            <strong className="text-white">28 de Abril a 24 de Junho</strong>,
+            você poderá ter a experiência de visitar nossos{' '}
+            <strong className="text-white">
+              apartamentos design, totalmente decorados
+            </strong>{' '}
+            por arquitetos renomados.
+          </p>
+          <p className="text-justify leading-8 tracking-wide text-lpSecondary">
+            Vivencie também nossa exposição HAUT 5 ANOS, além de curtir uma
+            programação cultural e gastronômica no café-bistrô Studio Mu. Rua
+            Capitão Rebelinho, 117 - Pina Recife
+          </p>
+          <p className="text-justify font-bold leading-8 tracking-wide text-white">
+            Rua Capitão Rebelinho, 117 - Pina Recife
           </p>
         </div>
         <div className="flex-col items-center justify-center">
@@ -26,11 +38,14 @@ const BookingSection: React.FC = () => {
           <BookingForm />
         </div>
       </div>
-      {/* <div className="absolute left-20 z-0 hidden lg:flex">
-    <img src={'images/hero-people.jpg'} alt="people" />
-  </div> */}
-      <div className="absolute right-0 z-0 hidden lg:flex w-1/5 ">
-        <img src={'images/hero-people.jpg'}  alt="people"  />
+      <div className="absolute top-10 left-5 z-0 lg:left-20 lg:top-20">
+        <img src={'images/amazing.png'} className="w-96" alt="people" />
+      </div>
+      <div className="absolute right-0 z-0 hidden w-1/5 lg:flex ">
+        <img src={'images/sideCircle.svg'} alt="people" />
+      </div>
+      <div className="z-{1} absolute right-0 hidden w-1/5 lg:flex ">
+        <img src={'images/woman.svg'} alt="people" />
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { IListing } from '../../interfaces/IListing'
+import { host } from '../../utils/constants'
 
 type Props = {
   listing: IListing
@@ -9,19 +10,19 @@ type Props = {
 const ListingCard: React.FC<Props> = ({ listing, goToListing }) => {
   return (
     <div
-      className="relative mx-5 my-5 cursor-pointer text-lpSecondary"
+      className="group relative mx-5 my-5 cursor-pointer text-lpSecondary "
       onClick={goToListing}
     >
-      <h1 className="z-8 absolute -top-5 -left-5 text-5xl font-bold shadow-sm">
+      <h1 className="absolute -top-5 -left-5 z-10 text-5xl font-bold shadow-sm transition-all duration-500 ease-in-out group-hover:-top-14 group-hover:text-white">
         {listing.attributes.listingId}.
       </h1>
       <span className="space-y-3">
         <img
-          src={`http://localhost:1337${listing.attributes.featuredImage.data.attributes.url}`}
+          src={`${host}${listing.attributes.featuredImage.data.attributes.url}`}
           alt=""
-          className="h-64 w-full rounded-xl object-cover"
+          className="h-64 w-full rounded-xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
-        <p className="line-clamp-2 text-base">
+        <p className="text-base transition-all duration-500 ease-in-out line-clamp-2 group-hover:text-white">
           {listing.attributes.featuredDescription}
         </p>
       </span>

@@ -18,6 +18,10 @@
   .btn {
     @apply rounded-md bg-black py-2 font-semibold text-white hover:bg-lpSecondary;
   }
+
+  .transition-custom-default {
+    @apply duration-500 ease-in-out;
+  }
 }
 
 .react-datetime-picker__wrapper {

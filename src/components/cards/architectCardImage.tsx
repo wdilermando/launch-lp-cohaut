@@ -1,11 +1,12 @@
 import React from 'react'
 import { IArchitect } from '../../interfaces/IArchitect'
+import { host } from '../../utils/constants'
 
 const ArchitectCardImage: React.FC<IArchitect> = ({ attributes, id }) => {
   return (
-    <div className="fix-hover-card group relative w-full cursor-pointer">
+    <div className="fix-hover-card group relative w-full">
       <img
-        src={`http://localhost:1337${attributes.profilePicture.data?.attributes.url}`}
+        src={`${host}${attributes.profilePicture.data?.attributes.url}`}
         alt=""
         className="h-screen w-full object-cover grayscale transition-transform duration-500 ease-in-out group-hover:scale-105 "
       />

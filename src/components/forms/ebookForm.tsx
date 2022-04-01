@@ -56,9 +56,9 @@ const EbookForm: React.FC = () => {
       <div className="flex w-full lg:justify-end">
         <button
           type="submit"
-          className="btn w-full bg-lpSecondary px-2 hover:bg-lpSecondary2"
+          className="btn w-full bg-lpSecondary px-2 uppercase text-black hover:bg-lpSecondary2"
         >
-          Quero receber no meu e-mail
+          Receber no meu e-mail
         </button>
       </div>
     </form>

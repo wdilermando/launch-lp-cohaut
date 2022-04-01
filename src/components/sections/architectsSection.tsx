@@ -13,18 +13,26 @@ type Props = {
 const ArchitectsSection: React.FC<Props> = ({ architectList }) => {
   return (
     <section className={`min-h-screen items-center bg-lpPrimary`}>
-      <div className="hidden lg:flex">
-        {architectList.map((architect) => (
-          <ArchitectCardImage {...architect} key={architect.id} />
-        ))}
-      </div>
-      <div className="flex lg:hidden">
+      <div className="w-full">
         <Swiper
           scrollbar={{
             hide: false,
           }}
           modules={[Scrollbar]}
-          slidesPerView={1}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            1200: {
+              slidesPerView: 4,
+            },
+          }}
         >
           {architectList.map((architect) => (
             <SwiperSlide key={architect.id}>

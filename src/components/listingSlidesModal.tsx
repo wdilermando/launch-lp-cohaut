@@ -27,7 +27,7 @@ const ListingsSlidesModal: React.FC<Props> = ({
   useEffect(() => {
     const parseSelectedListing =
       Number(selectedListing.toString().replace('0', '')) - 1
-    console.log(parseSelectedListing)
+
     mySlider.current.swiper.slideTo(parseSelectedListing)
   }, [])
 
@@ -41,7 +41,6 @@ const ListingsSlidesModal: React.FC<Props> = ({
           </a>
         </div>
         <div className="w-full text-lpSecondary md:px-8">
-          {/* item card */}
           <RefSwiper
             spaceBetween={20}
             slidesPerView={1.1}

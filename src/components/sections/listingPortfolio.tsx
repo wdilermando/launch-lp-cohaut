@@ -12,11 +12,10 @@ type Props = {
 const ListingPortfolio: React.FC<Props> = ({ handleModal, listings }) => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
+
   useEffect(() => {
     if (inView) {
       controls.start('visible')
-    } else {
-      controls.start('hidden')
     }
   }, [controls, inView])
 
@@ -61,7 +60,6 @@ const ListingPortfolio: React.FC<Props> = ({ handleModal, listings }) => {
                 ref={ref}
                 animate={controls}
                 initial="hidden"
-                transition={{ type: 'spring', stiffness: 100 }}
                 variants={variantsRight}
                 custom={listing.id}
               >

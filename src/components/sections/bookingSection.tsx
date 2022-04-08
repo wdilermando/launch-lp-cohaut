@@ -3,14 +3,47 @@ import BookingForm from '../forms/bookingForm'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-const BookingSection: React.FC = () => {
+type Props = {}
+
+const BookingSection: React.FC<Props> = () => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
+  const [ref2, inView2] = useInView()
+  const [ref3, inView3] = useInView()
+  const [ref4, inView4] = useInView()
+  const [ref5, inView5] = useInView()
+  const [ref6, inView6] = useInView()
+  const [ref7, inView7] = useInView()
+  const [ref8, inView8] = useInView()
+  const [ref9, inView9] = useInView()
+
   useEffect(() => {
     if (inView) {
       controls.start('visible')
-    } else {
-      controls.start('hidden')
+    }
+    if (inView2) {
+      controls.start('visible')
+    }
+    if (inView3) {
+      controls.start('visible')
+    }
+    if (inView4) {
+      controls.start('visible')
+    }
+    if (inView5) {
+      controls.start('visible')
+    }
+    if (inView6) {
+      controls.start('visible')
+    }
+    if (inView7) {
+      controls.start('visible')
+    }
+    if (inView8) {
+      controls.start('visible')
+    }
+    if (inView9) {
+      controls.start('visible')
     }
   }, [controls, inView])
 
@@ -26,9 +59,10 @@ const BookingSection: React.FC = () => {
 
   return (
     <section
-      className={`relative flex min-h-screen  items-center bg-lpPrimary`}
+      className={`relative flex items-center  bg-lpPrimary lg:h-screen`}
+      id="booking"
     >
-      <div className="z-10 flex-col items-end justify-between space-y-4 px-5 py-16 lg:flex lg:w-10/12 lg:flex-row lg:space-x-6 lg:px-32">
+      <div className="z-10 h-full w-full flex-col items-end justify-between space-y-4 px-5 py-16 lg:flex lg:w-10/12 lg:flex-row lg:space-x-6 lg:px-32">
         <div className="flex-col items-center justify-center space-y-4 lg:w-2/3">
           <motion.h1
             ref={ref}
@@ -42,7 +76,7 @@ const BookingSection: React.FC = () => {
           </motion.h1>
           <motion.h3
             className="mb-16 text-lg italic text-gray-300"
-            ref={ref}
+            ref={ref2}
             animate={controls}
             initial="hidden"
             transition={{ duration: 0.7 }}
@@ -52,7 +86,7 @@ const BookingSection: React.FC = () => {
           </motion.h3>
 
           <motion.p
-            ref={ref}
+            ref={ref3}
             animate={controls}
             initial="hidden"
             transition={{ duration: 0.5 }}
@@ -68,7 +102,7 @@ const BookingSection: React.FC = () => {
             por arquitetos renomados.
           </motion.p>
           <motion.p
-            ref={ref}
+            ref={ref4}
             animate={controls}
             initial="hidden"
             transition={{ duration: 0.5 }}
@@ -80,7 +114,7 @@ const BookingSection: React.FC = () => {
             Capitão Rebelinho, 117 - Pina Recife
           </motion.p>
           <motion.p
-            ref={ref}
+            ref={ref5}
             animate={controls}
             initial="hidden"
             transition={{ duration: 0.5 }}
@@ -91,7 +125,7 @@ const BookingSection: React.FC = () => {
           </motion.p>
         </div>
         <motion.div
-          ref={ref}
+          ref={ref6}
           animate={controls}
           initial="hidden"
           transition={{ duration: 0.5 }}
@@ -105,7 +139,7 @@ const BookingSection: React.FC = () => {
         </motion.div>
       </div>
       <motion.div
-        ref={ref}
+        ref={ref7}
         animate={controls}
         initial="hidden"
         transition={{ duration: 0.3 }}
@@ -118,7 +152,7 @@ const BookingSection: React.FC = () => {
         <img src={'images/amazing.png'} className="w-96" alt="people" />
       </motion.div>
       <motion.div
-        ref={ref}
+        ref={ref8}
         animate={controls}
         initial="hidden"
         transition={{ duration: 0.3 }}
@@ -128,7 +162,7 @@ const BookingSection: React.FC = () => {
         <img src={'images/sideCircle.svg'} alt="people" />
       </motion.div>
       <motion.div
-        ref={ref}
+        ref={ref9}
         animate={controls}
         initial="hidden"
         transition={{ duration: 0.5 }}

@@ -1,19 +1,21 @@
 import React from 'react'
 
-const HeroSection: React.FC = () => {
+type Props = {}
+
+const HeroSection: React.FC<Props> = () => {
   return (
     <section
-      className={`flex min-h-screen items-center justify-between bg-lpSecondary`}
+      className={`flex h-screen items-center justify-between bg-lpSecondary lg:relative`}
     >
-      <div className="flex items-center justify-center p-5 md:m-20 md:w-4/5 md:p-20">
+      <div className="z-10 flex items-center justify-center px-5 lg:px-32">
         <img
           src={'images/hero-image-title.png'}
-          className="w-full lg:w-1/2"
-          alt="title"
+          className="w-full lg:w-2/4"
+          alt="cohaut title"
         />
       </div>
-      <div className="hidden items-end md:flex md:w-1/5">
-        <img src={'images/hero-people.png'} alt="people" />
+      <div className="absolute right-0 z-0 hidden items-end md:flex">
+        <img src={'images/hero-people.png'} className="h-screen" alt="people" />
       </div>
     </section>
   )

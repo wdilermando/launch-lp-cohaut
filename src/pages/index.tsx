@@ -14,16 +14,21 @@ import { ArchitectService } from '../services/ArchitectService'
 import { IArchitect } from '../interfaces/IArchitect'
 import { IListing } from '../interfaces/IListing'
 import { ListingService } from '../services/ListingService'
-import { EventService } from '../services/EventService'
 import { IEvent } from '../interfaces/IEvent'
+
+import { useApi } from '../hooks/useApi'
 
 type Props = {
   architects: IArchitect[]
   listings: IListing[]
-  events: IEvent[]
 }
 
-const Home: NextPage<Props> = ({ architects, listings, events }) => {
+const Home: NextPage<Props> = ({ architects, listings }) => {
+  const { data: _events } = useApi('programacoes?populate=*')
+
+  const events: IEvent[] = _events?.data || []
+  
+
   const [showListingsSlides, setShowListingsSlides] = useState(false)
   const [selectedListing, setSelectedListing] = useState(1)
   const handleModal = (statusModal: boolean, listingId: number) => {
@@ -32,7 +37,7 @@ const Home: NextPage<Props> = ({ architects, listings, events }) => {
   }
   return (
     <>
-      <div className="h-screen w-screen overflow-scroll font-montserrat scrollbar-hide">
+      <div className="h-screen w-screen overflow-scroll scroll-smooth font-montserrat scrollbar-hide">
         {showListingsSlides && (
           <ListingsSlidesModal
             exitModal={handleModal}
@@ -50,26 +55,31 @@ const Home: NextPage<Props> = ({ architects, listings, events }) => {
         <NewsLetterSection />
         <Footer />
       </div>
+      {!showListingsSlides && (
+        <div className="fixed bottom-0 z-50 flex h-20 w-full items-center justify-center bg-lpSecondary2 p-5 lg:hidden">
+          <a href="#booking" className="btn px-5">
+            {' '}
+            Agende sua visita{' '}
+          </a>
+        </div>
+      )}
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const [fetchArchitect, fetchListing, fetchEvents] = await Promise.all([
+  const [fetchArchitect, fetchListing] = await Promise.all([
     ArchitectService.getAll(),
     ListingService.getAll(),
-    EventService.getAll(),
   ])
 
   const { data: architects } = fetchArchitect.data
   const { data: listings } = fetchListing.data
-  const { data: events } = fetchEvents.data
 
   return {
     props: {
       architects,
       listings,
-      events,
     },
     revalidate: 10,
   }

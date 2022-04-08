@@ -1,6 +1,5 @@
 import React from 'react'
 import { IListing } from '../../interfaces/IListing'
-import { host } from '../../utils/constants'
 
 type Props = {
   listing: IListing
@@ -18,7 +17,7 @@ const ListingCard: React.FC<Props> = ({ listing, goToListing }) => {
       </h1>
       <span className="space-y-3">
         <img
-          src={`${host}${listing.attributes.featuredImage.data.attributes.url}`}
+          src={`${listing.attributes.featuredImage.data?.attributes.url}`}
           alt=""
           className="h-64 w-full rounded-xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />

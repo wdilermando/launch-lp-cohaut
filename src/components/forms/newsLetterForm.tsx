@@ -7,8 +7,8 @@ interface IFormNewsLetterValues {
   name: string
   email: string
 }
-
-const NewsLetterForm: React.FC = () => {
+type Props = {}
+const NewsLetterForm: React.FC<Props> = () => {
   const {
     register,
     handleSubmit,

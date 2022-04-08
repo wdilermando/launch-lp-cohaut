@@ -1,6 +1,5 @@
 import React from 'react'
 import { IListing } from '../../interfaces/IListing'
-import { host } from '../../utils/constants'
 
 type Props = {
   slideActive?: any
@@ -8,7 +7,6 @@ type Props = {
 }
 
 const ListingSlideCard: React.FC<Props> = ({ slideActive, listing }) => {
-  console.log(listing)
   return (
     <div
       className={`flex-col items-center ${
@@ -18,14 +16,14 @@ const ListingSlideCard: React.FC<Props> = ({ slideActive, listing }) => {
       <div className="order-last my-8 flex  space-x-3 lg:w-9/12">
         <img
           className="h-96 rounded-md object-cover lg:w-9/12 lg:rounded-lg"
-          src={`${host}${listing.attributes.featuredImage.data.attributes.url}`}
+          src={`${listing.attributes.featuredImage.data?.attributes.url}`}
         />
         <div className="hidden max-h-96 w-52 flex-col items-center justify-between lg:flex">
-          {listing.attributes.gallery.data.map((photo) => (
+          {listing.attributes.gallery.data?.map((photo) => (
             <img
               key={photo.id}
               className="h-20 w-full rounded-md object-cover lg:rounded-lg"
-              src={`${host}${photo.attributes.url}`}
+              src={`${photo.attributes.url}`}
             />
           ))}
         </div>

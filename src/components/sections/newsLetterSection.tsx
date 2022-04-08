@@ -2,7 +2,9 @@ import React from 'react'
 import NewsLetterForm from '../forms/newsLetterForm'
 import Arrows from '../molecules/arrows'
 
-const NewsLetterSection: React.FC = () => {
+type Props = {}
+
+const NewsLetterSection: React.FC<Props> = () => {
   const posts = [
     {
       id: 1,

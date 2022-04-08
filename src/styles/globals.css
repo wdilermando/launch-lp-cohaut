@@ -32,7 +32,7 @@
 }
 
 .swiper-button-next::after {
-  background-image: url('../../public/images/right-arrow.svg') !important;
+  background-image: url('https://res.cloudinary.com/dyxbrraat/image/upload/v1649161842/right_arrow_dbff056703.svg') !important;
 
   background-repeat: no-repeat;
   content: '' !important;
@@ -44,7 +44,7 @@
 }
 
 .swiper-button-prev::after {
-  background-image: url('../../public/images/left-arrow.svg') !important;
+  background-image: url('https://res.cloudinary.com/dyxbrraat/image/upload/v1649161842/left_arrow_e98f8f31c0.svg') !important;
 
   background-repeat: no-repeat;
   content: '' !important;

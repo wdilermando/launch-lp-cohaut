@@ -18,8 +18,6 @@ const ListingsSlidesModal: React.FC<Props> = ({
   selectedListing,
   listings,
 }) => {
-  console.log(selectedListing)
-
   const RefSwiper: React.FunctionComponent<
     SwiperProps & RefAttributes<SwiperCore>
   > = Swiper
@@ -50,7 +48,7 @@ const ListingsSlidesModal: React.FC<Props> = ({
             centeredSlides={true}
             watchOverflow
           >
-            {listings.map((listing, index) => (
+            {listings.map((listing) => (
               <SwiperSlide key={listing.id}>
                 {({ isActive }) => (
                   <ListingSlideCard listing={listing} slideActive={isActive} />

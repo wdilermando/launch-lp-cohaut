@@ -2,8 +2,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
     "axios": "^0.26.1",
@@ -19,6 +20,7 @@
     "react-lottie-player": "^1.4.1",
     "remove": "^0.1.5",
     "swiper": "^8.0.7",
+    "swr": "^1.2.2",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {

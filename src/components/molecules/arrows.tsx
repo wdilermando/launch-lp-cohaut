@@ -1,7 +1,8 @@
 import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 
-const Arrows: React.FC = () => {
+type Props = {}
+const Arrows: React.FC<Props> = () => {
   return (
     <span className="flex space-x-2">
       <FaPlay color="#ff7149" />

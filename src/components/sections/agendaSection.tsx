@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { IEvent } from '../../interfaces/IEvent'
@@ -6,20 +6,55 @@ import { extractInfoDate } from '../../utils/parseDate'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+
 type Props = {
   eventList: IEvent[]
 }
 
 const AgendaSection: React.FC<Props> = ({ eventList }) => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  const variantsLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: '-100%' },
+  }
+
+  const variantsRight = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: '100%' },
+  }
+
   const hasEventList = eventList.length >= 1
+
   return (
     <section className={`flex bg-lpPrimary py-16 lg:h-screen`}>
       <div className="flex h-full w-full flex-col justify-between space-y-10 px-5 lg:px-32">
         <div className="flex justify-between">
-          <h3 className="text-2xl  font-bold text-lpSecondary shadow-sm">
+          <motion.h3
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={variantsLeft}
+            className="text-2xl  font-bold text-lpSecondary shadow-sm"
+          >
             PROGRAMAÇÃO
-          </h3>
-          <img src="images/dots.svg" className="w-14" />
+          </motion.h3>
+          <motion.img
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={variantsRight}
+            src="images/dots.svg"
+            className="w-14"
+          />
         </div>
         {hasEventList ? (
           <>
@@ -70,7 +105,13 @@ const AgendaSection: React.FC<Props> = ({ eventList }) => {
               </Swiper>
             </div>
             {/* Exibe somente em telas maiores */}
-            <div className="hidden flex-col lg:flex">
+            <motion.div
+              ref={ref}
+              animate={controls}
+              initial="hidden"
+              variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
+              className="hidden flex-col lg:flex"
+            >
               <div className="w-full lg:flex">
                 {eventList?.map((event) => (
                   <div
@@ -112,7 +153,7 @@ const AgendaSection: React.FC<Props> = ({ eventList }) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </>
         ) : (
           <h1 className="text-3xl text-white">
@@ -121,8 +162,21 @@ const AgendaSection: React.FC<Props> = ({ eventList }) => {
         )}
 
         <div className="flex justify-between">
-          <img src="images/dots.svg" className="w-14" />
-          <img src="images/cohaut-logo-horizontal.svg" />
+          <motion.img
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={variantsLeft}
+            src="images/dots.svg"
+            className="w-14"
+          />
+          <motion.img
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={variantsRight}
+            src="images/cohaut-logo-horizontal.svg"
+          />
         </div>
       </div>
     </section>

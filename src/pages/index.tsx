@@ -27,7 +27,6 @@ const Home: NextPage<Props> = ({ architects, listings }) => {
   const { data: _events } = useApi('programacoes?populate=*')
 
   const events: IEvent[] = _events?.data || []
-  
 
   const [showListingsSlides, setShowListingsSlides] = useState(false)
   const [selectedListing, setSelectedListing] = useState(1)
@@ -76,9 +75,21 @@ export const getStaticProps: GetStaticProps = async () => {
   const { data: architects } = fetchArchitect.data
   const { data: listings } = fetchListing.data
 
+  const newArchitectList = architects.map((arc) => {
+    for (let emp of arc.attributes.empreendimentos.data) {
+      return {
+        ...arc,
+        attributes: { ...arc.attributes, listingId: emp.attributes.listingId },
+      }
+    }
+  })
+  function compareListingToSort(a, b) {
+    return a.attributes.listingId.localeCompare(b.attributes.listingId)
+  }
+
   return {
     props: {
-      architects,
+      architects: newArchitectList.sort(compareListingToSort),
       listings,
     },
     revalidate: 10,

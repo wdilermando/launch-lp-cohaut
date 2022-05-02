@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import EbookForm from '../forms/ebookForm'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Lottie from 'react-lottie-player'
+import lottieJson from '../../../public/motion/04 - ebook.json'
 
 type Props = {}
 
@@ -74,20 +76,15 @@ const EbookSection: React.FC<Props> = () => {
         >
           <EbookForm />
         </motion.div>
-        <motion.img
+        <motion.div
           ref={ref4}
           animate={controls}
           initial="hidden"
           variants={variantsRight}
-          src="images/person-up-side-down.png"
-          className="top-20 right-72 z-10 hidden lg:absolute lg:block lg:w-5/12"
-          alt=""
-        />
-        <img
-          src="images/amazing.png"
-          className="top-20 right-0 z-0 hidden lg:absolute lg:block lg:w-4/12"
-          alt=""
-        />
+          className="top-20 right-0 z-10 hidden lg:absolute lg:block lg:w-7/12"
+        >
+          <Lottie loop animationData={lottieJson} play />
+        </motion.div>
       </div>
     </section>
   )

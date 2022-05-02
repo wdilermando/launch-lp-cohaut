@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import BookingForm from '../forms/bookingForm'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Lottie from 'react-lottie-player'
+import lottieJson from '../../../public/motion/02 - viva-essa-exp.json'
 
 type Props = {}
 
@@ -62,7 +64,7 @@ const BookingSection: React.FC<Props> = () => {
       className={`relative flex items-center  bg-lpPrimary lg:h-screen`}
       id="booking"
     >
-      <div className="z-10 h-full w-full flex-col items-end justify-between space-y-4 px-5 py-16 lg:flex lg:w-10/12 lg:flex-row lg:space-x-6 lg:px-32">
+      <div className="z-10 h-full w-full flex-col items-center justify-between space-y-4 px-5 py-16 lg:flex lg:w-10/12 lg:flex-row lg:space-x-6 lg:px-32">
         <div className="flex-col items-center justify-center space-y-4 lg:w-2/3">
           <motion.h1
             ref={ref}
@@ -151,6 +153,7 @@ const BookingSection: React.FC<Props> = () => {
       >
         <img src={'images/amazing.png'} className="w-96" alt="people" />
       </motion.div>
+
       <motion.div
         ref={ref8}
         animate={controls}
@@ -167,9 +170,9 @@ const BookingSection: React.FC<Props> = () => {
         initial="hidden"
         transition={{ duration: 0.5 }}
         variants={variantsRight}
-        className="absolute right-5 z-10 hidden w-1/5 lg:flex "
+        className="absolute -right-56 z-10 hidden w-3/5 lg:flex "
       >
-        <img src={'images/woman.svg'} className="w-60" alt="people" />
+        <Lottie loop animationData={lottieJson} play />
       </motion.div>
     </section>
   )

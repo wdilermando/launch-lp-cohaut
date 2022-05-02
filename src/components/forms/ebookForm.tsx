@@ -23,7 +23,8 @@ const EbookForm: React.FC<Props> = () => {
     const formatedPayload = {
       data: {
         ...data,
-        ebookLink: 'https://cohaut.com/empreendimentos/cohaut-002/',
+        ebookLink: `https://cohaut.com/lancamento/public/default.pdf`,
+        ebookName: 'E-book CO-HAUT',
       },
     }
     try {

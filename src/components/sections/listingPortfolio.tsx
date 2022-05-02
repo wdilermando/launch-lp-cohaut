@@ -3,6 +3,8 @@ import { IListing } from '../../interfaces/IListing'
 import ListingCard from '../cards/listingCard'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Lottie from 'react-lottie-player'
+import lottieJson from '../../../public/motion/03 - decorados-co-haut.json'
 
 type Props = {
   handleModal?: any
@@ -50,7 +52,8 @@ const ListingPortfolio: React.FC<Props> = ({ handleModal, listings }) => {
           variants={variantsLeft}
           className="items-center justify-center lg:w-6/12"
         >
-          <img src="images/decorados.jpg" className="w-full" />
+          <Lottie loop animationData={lottieJson} play className="w-full" />
+          {/* <img src="images/decorados.jpg" className="w-full" /> */}
         </motion.div>
         <div className="items-center justify-center lg:w-6/12">
           <div className="grid gap-5 lg:grid-cols-2">

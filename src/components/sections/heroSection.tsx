@@ -1,4 +1,5 @@
 import React from 'react'
+import peopleGif from '../../../public/images/starting-page.gif'
 
 type Props = {}
 
@@ -14,8 +15,13 @@ const HeroSection: React.FC<Props> = () => {
           alt="cohaut title"
         />
       </div>
+
       <div className="absolute right-0 z-0 hidden items-end md:flex">
-        <img src={'images/hero-people.png'} className="h-screen" alt="people" />
+        <img
+          src={'images/starting-page.gif'}
+          className="h-screen"
+          alt="people"
+        />
       </div>
     </section>
   )

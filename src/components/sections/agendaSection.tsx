@@ -22,39 +22,16 @@ const AgendaSection: React.FC<Props> = ({ eventList }) => {
     }
   }, [controls, inView])
 
-  const variantsLeft = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: '-100%' },
-  }
-
-  const variantsRight = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: '100%' },
-  }
-
   const hasEventList = eventList.length >= 1
 
   return (
     <section className={`flex bg-lpPrimary py-16 lg:h-screen`}>
       <div className="flex h-full w-full flex-col justify-between space-y-10 px-5 lg:px-32">
         <div className="flex justify-between">
-          <motion.h3
-            ref={ref}
-            animate={controls}
-            initial="hidden"
-            variants={variantsLeft}
-            className="text-2xl  font-bold text-lpSecondary shadow-sm"
-          >
+          <h3 className="text-2xl  font-bold text-lpSecondary shadow-sm">
             PROGRAMAÇÃO
-          </motion.h3>
-          <motion.img
-            ref={ref}
-            animate={controls}
-            initial="hidden"
-            variants={variantsRight}
-            src="images/dots.svg"
-            className="w-14"
-          />
+          </h3>
+          <img src="images/dots.svg" className="w-14" />
         </div>
         {hasEventList ? (
           <>
@@ -131,7 +108,7 @@ const AgendaSection: React.FC<Props> = ({ eventList }) => {
                 {eventList?.map((event) => (
                   <div
                     key={event.id}
-                    className="w-full flex-col items-center rounded-md  text-white even:bg-lpSecondary2 lg:w-full"
+                    className="w-full flex-col items-center rounded-md  text-black even:bg-lpSecondary2 lg:w-full"
                   >
                     {event.attributes.events.map((eventDetail) => (
                       <div
@@ -156,27 +133,32 @@ const AgendaSection: React.FC<Props> = ({ eventList }) => {
             </motion.div>
           </>
         ) : (
-          <h1 className="text-3xl text-white">
-            Em breve divulgaremos a programacao
-          </h1>
+          <div className="w-full justify-start rounded-md bg-lpSecondary lg:flex">
+            {[1, 2, 3, 4, 5]?.map((event) => (
+              <div
+                key={event}
+                className="w-full flex-col items-center rounded-md  text-white even:bg-lpSecondary2 lg:w-full"
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((eventDetail) => (
+                  <div
+                    key={eventDetail}
+                    className="w-full flex-col items-start border-b border-slate-800 p-3  last:border-none"
+                  >
+                    {eventDetail == 5 ? (
+                      <p className="text-black">EM BREVE</p>
+                    ) : (
+                      <span className="px-2"></span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         )}
 
         <div className="flex justify-between">
-          <motion.img
-            ref={ref}
-            animate={controls}
-            initial="hidden"
-            variants={variantsLeft}
-            src="images/dots.svg"
-            className="w-14"
-          />
-          <motion.img
-            ref={ref}
-            animate={controls}
-            initial="hidden"
-            variants={variantsRight}
-            src="images/cohaut-logo-horizontal.svg"
-          />
+          <img src="images/dots.svg" className="w-14" />
+          <img src="images/cohaut-logo-horizontal.svg" />
         </div>
       </div>
     </section>

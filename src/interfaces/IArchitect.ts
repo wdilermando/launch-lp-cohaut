@@ -8,6 +8,7 @@ export interface IArchitect {
 export interface IArchitectAttributes {
   name: string
   description: string
+  listingId: string
   profilePicture: ProfilePicture
   empreendimentos: Empreendimentos
 }

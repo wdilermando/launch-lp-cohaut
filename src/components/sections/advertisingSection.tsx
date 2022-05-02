@@ -84,7 +84,7 @@ const AdvertisingSection: React.FC<Props> = () => {
   return (
     <section className={`relative flex min-h-screen  bg-lpSecondary`}>
       <div className="z-10 items-end space-y-4 space-x-4 py-16 px-5 lg:flex lg:px-32">
-        <div className="flex flex-col items-center justify-between py-5 lg:h-full lg:w-2/12 lg:items-end lg:border-r lg:border-slate-800  lg:px-5">
+        <div className="flex flex-col items-center justify-between py-5 lg:h-full lg:w-2/12 lg:items-end lg:px-5">
           <motion.img
             ref={ref}
             animate={controls}
